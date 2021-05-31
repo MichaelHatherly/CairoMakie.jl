@@ -9,12 +9,6 @@ using AbstractPlotting: convert_attribute, @extractvalue, LineSegments, to_ndim,
 using AbstractPlotting: @info, @get_attribute, Combined
 using AbstractPlotting: to_value, to_colormap, extrema_nan
 
-const LIB_CAIRO = if isdefined(Cairo, :libcairo)
-    Cairo.libcairo
-else
-    Cairo._jl_libcairo
-end
-
 const OneOrVec{T} = Union{
     T,
     Vec{N1, T} where N1,
